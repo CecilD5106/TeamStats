@@ -11,7 +11,7 @@ namespace TeamStats
     {
         static void Main(string[] args)
         {
-            string path = "E:\\Code\\VSCode\\Node\\CFB01\\2019CFPickem - Copy.xlsx";
+            string path = "E:\\Code\\VSCode\\Node\\CFB01\\2019CFPickem.xlsx";
             Application excel = new Application();
             Workbook wb = excel.Workbooks.Open(path);
             try
@@ -44,6 +44,7 @@ namespace TeamStats
                     {
                         wsTeam.Cells[5, 1].Value = wsTeam.Cells[6, 1].Value + 1;
                     }
+                    i++;
                 }
 
                 //Get data from Defensive Stats worksheet
@@ -59,6 +60,7 @@ namespace TeamStats
                     wsTeam.Cells[5, 12].Value = wsDef.Cells[j, 4].Value;
                     wsTeam.Cells[5, 14].Value = wsDef.Cells[j, 5].Value;
                     wsTeam.Cells[5, 16].Value = wsDef.Cells[j, 6].Value;
+                    j++;
                 }
                 wb.Save();
                 excel.Quit();
